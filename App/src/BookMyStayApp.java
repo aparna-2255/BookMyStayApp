@@ -3,32 +3,52 @@
  * MAIN CLASS - BookMyStayApp
  * =====================================================
  *
- * Use Case 1: Application Entry & Welcome Message
+ * Use Case 2: Basic Room Types & Static Availability
  *
  * Description:
- * This class represents the entry point of the
- * Hotel Booking Management System.
+ * This class demonstrates room initialization
+ * using domain models before introducing
+ * centralized inventory management.
  *
- * At this stage, the application:
- * - Starts execution from the main() method
- * - Displays a welcome message to the user
- * - Confirms that the system has started successfully
+ * Availability is represented using
+ * simple variables to highlight limitations.
  *
- * @author [Your Name]
- * @version 1.0
+ * @version 2.0
  */
 public class BookMyStayApp {
 
     /**
      * Application entry point.
      *
-     * This method is the first method executed
-     * when the program is launched by the JVM.
-     *
      * @param args Command-line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Welcome to the Hotel Booking Management System");
-        System.out.println("System initialized successfully.");
+
+        System.out.println("Hotel Room Initialization\n");
+
+        // Create room objects
+        Room singleRoom = new SingleRoom();
+        Room doubleRoom = new DoubleRoom();
+        Room suiteRoom = new SuiteRoom();
+
+        // Static availability using simple variables
+        int singleRoomAvailable = 5;
+        int doubleRoomAvailable = 3;
+        int suiteRoomAvailable = 2;
+
+        // Display Single Room details
+        System.out.println("Single Room:");
+        singleRoom.displayRoomDetails();
+        System.out.println("Available: " + singleRoomAvailable);
+
+        // Display Double Room details
+        System.out.println("\nDouble Room:");
+        doubleRoom.displayRoomDetails();
+        System.out.println("Available: " + doubleRoomAvailable);
+
+        // Display Suite Room details
+        System.out.println("\nSuite Room:");
+        suiteRoom.displayRoomDetails();
+        System.out.println("Available: " + suiteRoomAvailable);
     }
 }
